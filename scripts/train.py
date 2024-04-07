@@ -2,6 +2,7 @@
 
 import gzip
 import logging
+import os
 import sys
 from pathlib import Path
 from typing import Optional, TextIO
@@ -177,6 +178,8 @@ def main(cfg: TrainConfig) -> None:
         evaluators=evaluators,
         indices_file=indices_file,
     ) as trainer:
+        if not os.path.exists(cfg.load_path):
+            cfg.load_path = None
         if not cfg.dry_run and not cfg.no_pre_train_checkpoint and cfg.load_path is None:
             checkpoint_type = (
                 CheckpointType.sharded if cfg.save_num_checkpoints_to_keep != 0 else CheckpointType.unsharded
