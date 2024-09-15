@@ -13,4 +13,4 @@ class OLMoTokenizerFast(PreTrainedTokenizerFast):
 
 
 # Register the tokenizer class so that it is available for transformer pipelines, auto-loading etc.
-AutoTokenizer.register(OLMoConfig, fast_tokenizer_class=OLMoTokenizerFast)
+AutoTokenizer.register(OLMoConfig, fast_tokenizer_class=OLMoTokenizerFast, exist_ok=True)

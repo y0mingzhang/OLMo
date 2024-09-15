@@ -41,4 +41,4 @@ class OLMoConfig(PretrainedConfig):
 
 
 # Register the config class so that it is available for transformer pipelines, auto-loading etc.
-AutoConfig.register("olmo", OLMoConfig)
+AutoConfig.register("olmo", OLMoConfig, exist_ok=True)

@@ -223,4 +223,4 @@ class OLMoForCausalLM(PreTrainedModel):
 
 
 # Register the model so that it is available for transformer pipelines, auto-loading, etc.
-AutoModelForCausalLM.register(OLMoConfig, OLMoForCausalLM)
+AutoModelForCausalLM.register(OLMoConfig, OLMoForCausalLM, exist_ok=True)
